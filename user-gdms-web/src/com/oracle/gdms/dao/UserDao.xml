@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.gdms.dao.UserDao">
+	<insert id="add" parameterType="User">
+		INSERT INTO 
+		tbl_gdms_user(rowflag,account,logpwd,roleid,realname,sex,idnumber,
+						birthday,regtime,lastlogin,status,place,photo) 
+						
+		VALUES ( #{rowflag},#{account},#{logpwd},#{roleid},#{realname},#{sex},#{idnumber},
+		#{birthday},#{regtime},#{lastlogin},#{status},#{place},#{photo})
+	</insert>
+	
+	<select id="login" parameterType="User" resultType="User">
+		SELECT * FROM tbl_gdms_user WHERE account =#{account} AND logpwd = #{logpwd}
+	</select>
+	
+</mapper>

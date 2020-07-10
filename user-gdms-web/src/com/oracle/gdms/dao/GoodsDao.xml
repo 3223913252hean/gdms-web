@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oracle.gdms.dao.GoodsDao">
+
+	<resultMap type="Goods" id="GoodsEntity">
+		<id column="goodsid" property="goodsid"/>
+		<result column="rowflag" property="rowflag"/>
+		<result column="name" property="name"/>
+		<result column="spec" property="spec"/>
+		<result column="amount" property="amount"/>
+		<result column="price" property="price"/>
+		<result column="makedate" property="makedate"/>
+		<result column="push" property="push"/>
+		<association property="type" javaType="GoodsType" 
+		select="com.oracle.gdms.dao.GoodsTypeDao.findById" column="gtid"></association>
+		
+	</resultMap>
+
+
+	<select id="findByPage" parameterType="java.util.Map" resultMap="GoodsEntity">
+		SELECT * FROM tbl_gdms_goods LIMIT #{offset},#{rows}
+	</select>
+	<select id="findCount" resultType="int">
+		SELECT count(*) FROM tbl_gdms_goods
+	</select>
+</mapper>
