@@ -6,12 +6,12 @@ import java.sql.Timestamp;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class GoodsModel implements Serializable {
+public class GoodsEntity implements Serializable {
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -2258086924614451635L;
+	private static final long serialVersionUID = 196636077108197426L;
 	private Integer goodsid;
 	private String rowflag;
 	private String name;
@@ -26,10 +26,7 @@ public class GoodsModel implements Serializable {
 	private String size;
 	private float weight;
 	private String photo;
-	private Timestamp makedate;
-	private String expirydate;
-	private short status;
-	private boolean push;
+	private long makedate;
 	public Integer getGoodsid() {
 		return goodsid;
 	}
@@ -114,10 +111,10 @@ public class GoodsModel implements Serializable {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public Timestamp getMakedate() {
+	public long getMakedate() {
 		return makedate;
 	}
-	public void setMakedate(Timestamp makedate) {
+	public void setMakedate(long makedate) {
 		this.makedate = makedate;
 	}
 	public String getExpirydate() {
@@ -138,6 +135,10 @@ public class GoodsModel implements Serializable {
 	public void setPush(boolean push) {
 		this.push = push;
 	}
+	private String expirydate;
+	private short status;
+	private boolean push;
+	
 	
 	
 }

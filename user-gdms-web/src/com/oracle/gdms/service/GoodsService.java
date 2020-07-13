@@ -12,4 +12,11 @@ public interface GoodsService {
 	 * @return
 	 */
 	PageModel<GoodsModel> findByPage(int pageNumber,int rows);
+
+	/**
+	 * 推送指定ID的商品
+	 * @param goodsid
+	 * @return 成功消息为空串，失败为消息内容
+	 */
+	String pushGoods(int goodsid);
 }

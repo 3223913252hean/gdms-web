@@ -20,5 +20,24 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.14.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mybatis-3.2.7.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-client-1.18.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-core-1.18.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-grizzly2-1.19.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-server-1.18.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-servlet-1.18.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-spring-1.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-json-1.0.3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpclient-cache-4.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpclient-win-4.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpmime-4.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/fluent-hc-4.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jna-platform-4.1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

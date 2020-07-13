@@ -29,7 +29,7 @@ public class GoodsList extends HttpServlet {
 		int p = Integer.parseInt(pageNumber);
 		PageModel<GoodsModel> data = service.findByPage(p, PageModel.ROWS);
 		
-		request.setAttribute("data", data);
+		request.setAttribute("model", data);
 		
 		request.getRequestDispatcher("../jsp/goods/list.jsp").forward(request, response);
 	}

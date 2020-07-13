@@ -21,6 +21,23 @@ function qipao(msg,$obj){
 	
 }
 
+function queren(msg,$tr) {
+	var d = dialog({
+		title:"删除",
+		content:msg,
+		ok:function(){
+			console.log("确认删除");
+			$tr.remove();
+		},
+		cancel:function(){
+			console.log("取消删除");
+			d.close().remove();
+			
+		}
+	});
+	d.showModal().width(400);
+}
+
 $(function(){
 
 	$(document).click(function(){
