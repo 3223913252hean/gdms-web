@@ -11,12 +11,13 @@ public class GoodsEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 196636077108197426L;
+	private static final long serialVersionUID = 4291184446752652899L;
 	private Integer goodsid;
 	private String rowflag;
 	private String name;
 	private String spec;
 	private GoodsType type;   //一方对象
+	private int gtid;       //为推送商品类别增加一个ID
 	private String unit;
 	private float amount;
 	private float price;
@@ -27,6 +28,17 @@ public class GoodsEntity implements Serializable {
 	private float weight;
 	private String photo;
 	private long makedate;
+	
+	public Timestamp getScrq() {
+		return new Timestamp(makedate);
+	}
+	
+	public int getGtid() {
+		return gtid;
+	}
+	public void setGtid(int gtid) {
+		this.gtid = gtid;
+	}
 	public Integer getGoodsid() {
 		return goodsid;
 	}

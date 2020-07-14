@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-<base href="http://localhost:8080/gdms-web/">
+<base href="${href }">
 <title>登录</title>
 <link rel="stylesheet" href="css/pintuer.css">
 <link rel="stylesheet" href="css/admin.css">
@@ -89,21 +89,21 @@
 							style="padding: 30px; padding-bottom: 10px; padding-top: 10px;">
 							<div class="form-group">
 								<div class="field field-icon-right">
-									<input type="text" class="input input-big" name="name"
+									<input type="text" class="input input-big" name="name" id="mobile" onblur="testMobile(this)"
 										placeholder="手机号码" data-validate="required:请填写手机号码" /> <span
 										class="icon icon-phone margin-small"></span>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="field field-icon-right">
-									<input type="password" class="input input-big" name="password"
+									<input type="password" class="input input-big" name="password" id="password"
 										placeholder="登录密码" data-validate="required:请填写密码" /> <span
 										class="icon icon-key margin-small"></span>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="field field-icon-right">
-									<input type="password" class="input input-big" name="password2"
+									<input type="password" class="input input-big" name="password2" id="password2"
 										placeholder="确认密码" data-validate="required:请确认密码" /> <span
 										class="icon icon-key margin-small"></span>
 								</div>
@@ -171,13 +171,60 @@
 	})
 	
 	function check() {   //检查输入项是否合法，不合法就弹出信息提示
+		var pwd1 = $("#password").val();
+		var pwd2 = $("#password2").val();
 		var v = $("#pic").val();
 		if(v.indexOf("\\") !=-1){
 			qipao("请先提交上传",$("#pic"));
 			return false;
 		}
+		if(pwd1 !=pwd2){
+			qipao("两次密码不一致，请重试",$("#password2"));
+			return false;
+		}
+	//	if(pass)
 		return true;
+		
+		
 	}
+	
+	
+	
+	
+	//检验手机号码
+	function testMobile(txt) {
+		var v = txt.value;
+		if(v =="") return;
+		if(v.length !=11){
+			qipao("手机号码不合法",$("#mobile"));
+			return;
+		}
+		
+		$.ajax({
+				url:"admin/user/mobile.php",   //请求的URI
+				data:{"mobile":v}, //提交的参数数据
+				type:"GET",   //请求方式
+				success:function(result){   //成功之后做什么
+					var json = eval(result);//把结果变成JSON对象
+					qipao(json.data.message,$("#mobile"));
+					if(json.data.code !=0){
+						$("#mobile").css({"border":"1px solid red"});
+					}else{
+						$("#mobile").css({"border":"1px solid green"});
+					}
+				}
+					
+		});
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	function initProv(target,pid) {
 		$.ajax({
 			

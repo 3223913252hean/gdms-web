@@ -8,6 +8,8 @@ import javax.ws.rs.core.MediaType;
 
 import com.oracle.gdms.entity.Model;
 import com.oracle.gdms.entity.ResponseEntity;
+import com.oracle.gdms.service.GoodsService;
+import com.oracle.gdms.service.impl.GoodsServiceImpl;
 
 @Path("/goods")
 public class GoodsRest {
@@ -18,7 +20,9 @@ public class GoodsRest {
 	@Consumes(MediaType.APPLICATION_JSON+";charset=UTF-8")
 	public ResponseEntity pushGoods(Model goods) {
 		
-		System.out.println("商品信息="+goods.getGoods().getName());
+		
+		GoodsService service = new GoodsServiceImpl();
+		int count = service.add(goods.getGoods());
 		
 		ResponseEntity resp = new ResponseEntity();
 		resp.setCode(0);

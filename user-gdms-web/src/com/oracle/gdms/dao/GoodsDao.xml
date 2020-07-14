@@ -29,5 +29,17 @@
 		SELECT * FROM tbl_gdms_goods WHERE goodsid = #{goodsid}
 	</select>
 	
+	<insert id="add" parameterType="com.oracle.gdms.entity.GoodsEntity">
+		INSERT INTO tbl_gdms_goods(rowflag,name,spec,gtid,unit,amount,
+									price,agio,area,color,size,weight,
+									photo,makedate,expirydate,status,push)
+		VALUE(#{rowflag},#{name},#{spec},#{gtid},#{unit},#{amount},
+				#{price},#{agio},#{area},#{color},#{size},#{weight},
+				#{photo},#{scrq},#{expirydate},#{status},0)
+	</insert>
+	
+	<update id="updatePush" parameterType="int">
+		UPDATE tbl_gdms_goods SET push=1 WHERE goodsid=#{goodsid}
+	</update>
 	
 </mapper>

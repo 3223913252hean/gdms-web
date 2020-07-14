@@ -1,5 +1,6 @@
 package com.oracle.gdms.service;
 
+import com.oracle.gdms.entity.GoodsEntity;
 import com.oracle.gdms.entity.GoodsModel;
 import com.oracle.gdms.entity.PageModel;
 
@@ -19,4 +20,13 @@ public interface GoodsService {
 	 * @return 成功消息为空串，失败为消息内容
 	 */
 	String pushGoods(int goodsid);
+
+	/**
+	 * 增加一条商品记录
+	 * @param goods
+	 * @return返回受影响的行数
+	 */
+	int add(GoodsEntity goods);
+
+	
 }

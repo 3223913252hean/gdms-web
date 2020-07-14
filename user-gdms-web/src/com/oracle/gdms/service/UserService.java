@@ -12,4 +12,11 @@ public interface UserService {
 	int add(UserMode  user);
 
 	UserMode login(UserMode user);
+
+	/**
+	 * 检查手机号码是否被占用
+	 * @param mobile
+	 * @return
+	 */
+	boolean hasMobile(String mobile);
 }

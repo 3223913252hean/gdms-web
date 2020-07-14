@@ -35,6 +35,7 @@ public class GoodsPush extends HttpServlet {
 			GoodsService service =new GoodsServiceImpl();
 			int goodsid = Integer.parseInt(gid);
 			String msg = service.pushGoods(goodsid);
+			ent.setMessage(msg);
 		}
 		
 		json.put("data", ent);
